@@ -1,6 +1,6 @@
 'use strict';
  
-angular.module('myApp.register', ['ngRoute'])
+angular.module('myApp.register', ['ngRoute', 'firebase'])
  
 // Declared route 
 .config(['$routeProvider', function($routeProvider) {
@@ -11,6 +11,16 @@ angular.module('myApp.register', ['ngRoute'])
 }])
  
 // Register controller
-.controller('RegisterCtrl', [function() {
- 
+.controller('RegisterCtrl', ['$scope', '$firebaseAuth',function($scope, $) {
+	$scope.signUp = function() {
+		// sign up implementation
+		if (!$scope.regForm.$invalid) {
+			console.log('valid form submission')
+
+		};
+	}
+
+
+
+
 }]);
