@@ -23,7 +23,7 @@ angular.module('myApp.home', ['ngRoute'])
 	    var username = $scope.user.email;
 	    var password = $scope.user.password;
 	     
-	    loginObj.$login('password', {
+	    loginObj.$authWithPassword({
 	            email: username,
 	            password: password
 	        })
