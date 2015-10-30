@@ -11,12 +11,12 @@ angular.module('myApp.home', ['ngRoute'])
 }])
  
 // Home controller
-.controller('HomeCtrl', ['$scope', '$firebaseSimpleLogin', function($scope, $firebaseSimpleLogin) {
+.controller('HomeCtrl', ['$scope', '$firebaseAuth', function($scope, $firebaseAuth) {
 
 	// auth logic goes here for now
 
 	var firebaseObj = new Firebase("https://bloggy.firebaseio.com")
-	var loginObj = $firebaseSimpleLogin(firebaseObj);
+	var loginObj = $firebaseAuth(firebaseObj);
 
 	$scope.SignIn = function(event) {
 	    event.preventDefault();  // To prevent form refresh
