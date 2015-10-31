@@ -6,6 +6,7 @@ angular.module('myApp', [
   'myApp.home',
   'myApp.register',
   'myApp.welcome',
+  'myApp.addPost',
   'firebase',
 ]).
 config(['$routeProvider', function($routeProvider) {
