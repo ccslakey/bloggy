@@ -9,9 +9,10 @@ angular.module('myApp.home', ['ngRoute'])
         controller: 'HomeCtrl'
     });
 }])
+
  
 // Home controller
-.controller('HomeCtrl', ['$scope', '$firebaseAuth', function($scope, $firebaseAuth) {
+.controller('HomeCtrl', ['$scope', '$firebaseAuth', '$location', 'CommonProp', function($scope, $firebaseAuth, $location, CommonProp) {
 
 	// auth logic goes here for now
 
@@ -30,14 +31,24 @@ angular.module('myApp.home', ['ngRoute'])
 	        .then(function(user) {
 	            // Success callback
 	            console.log('Authentication successful');
+	            $location.path('/welcome');
+	            CommonProp.setUser(user.password.email);
 	        }, function(error) {
 	            // Failure callback
 	            console.log('Authentication failure');
 	        });
 	}
 
-
-
-
-
-}]);
+}])
+.service('CommonProp', function() {
+    var user = '';
+ 
+    return {
+        getUser: function() {
+            return user;
+        },
+        setUser: function(value) {
+            user = value;
+        }
+    };
+});
