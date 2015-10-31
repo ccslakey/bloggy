@@ -12,7 +12,7 @@ angular.module('myApp.register', ['ngRoute', 'firebase'])
 
 // Register controller
 .controller('RegisterCtrl', ['$scope', '$firebaseAuth', '$location', function($scope, $firebaseAuth, $location) {
-    var firebaseObj = new Firebase("https://bloggy.firebaseio.com");
+    var firebaseObj = new Firebase("https://bloggy.firebaseio.com/users");
     var auth = $firebaseAuth(firebaseObj);
 
 

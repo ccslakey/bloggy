@@ -16,7 +16,7 @@ angular.module('myApp.home', ['ngRoute'])
 
 	// auth logic goes here for now
 
-	var firebaseObj = new Firebase("https://bloggy.firebaseio.com")
+	var firebaseObj = new Firebase("https://bloggy.firebaseio.com/users")
 	var loginObj = $firebaseAuth(firebaseObj);
 
 	$scope.SignIn = function(event) {
